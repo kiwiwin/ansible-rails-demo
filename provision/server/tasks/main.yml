@@ -4,15 +4,32 @@
   git: repo=git://github.com/kiwiwin/ansible-rails-demo.git
        dest=/rails-demo
 
+- name: install sqlite3
+  apt:     
+    pkg: sqlite3
+    state: present
+
+- name: install libsqlite3-dev
+  apt:
+    pkg: libsqlite3-dev
+    state: present
+
+- name: install execjs runtime
+  apt:
+    pkg: nodejs
+    state: present
+
 - name: install gems
   shell: bundle install
-  chdir: /rails-demo
-
+  args:
+    chdir: /rails-demo
 
 - name: migrate db
   shell: rake db:migrate
-  chdir: /rails-demo
+  args:
+    chdir: /rails-demo
 
 - name: start server
-  shell: rails s
-  chdir: /rails-demo
+  shell: nohup rails s &
+  args:
+    chdir: /rails-demo

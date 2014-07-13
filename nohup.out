@@ -1,0 +1,14 @@
+[2014-07-14 04:50:09] INFO  WEBrick 1.3.1
+[2014-07-14 04:50:09] INFO  ruby 2.1.1 (2014-02-24) [x86_64-darwin12.0]
+[2014-07-14 04:50:09] INFO  WEBrick::HTTPServer#start: pid=42509 port=3000
+[2014-07-14 04:50:11] INFO  going to shutdown ...
+[2014-07-14 04:50:11] INFO  WEBrick::HTTPServer#start done.
+=> Booting WEBrick
+=> Rails 4.1.1 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Notice: server is listening on all interfaces (0.0.0.0). Consider using 127.0.0.1 (--binding option)
+=> Ctrl-C to shutdown server
+Exiting
+[2014-07-14 04:50:20] INFO  WEBrick 1.3.1
+[2014-07-14 04:50:20] INFO  ruby 2.1.1 (2014-02-24) [x86_64-darwin12.0]
+[2014-07-14 04:50:20] INFO  WEBrick::HTTPServer#start: pid=42518 port=3000

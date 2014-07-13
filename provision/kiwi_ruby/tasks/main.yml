@@ -1,0 +1,26 @@
+---
+
+- name: create ruby directory
+  command: mkdir -p /ruby
+
+- name: download ruby source
+  get_url: url=http://ruby.taobao.org/mirrors/ruby/ruby-2.1.2.tar.gz dest=/ruby
+
+- name: unarchive ruby
+  command: tar -zxvf ruby-2.1.2.tar.gz
+  args:
+    chdir: /ruby
+
+- name: install build-essential
+  apt: pkg=build-essential state=latest
+
+- name: install ruby
+  shell: ./configure; make; sudo make install
+  args:
+    chdir: /ruby/ruby-2.1.2
+
+- name: install bundler
+  shell: gem install bundler
+
+# - name: install rake
+#   shell: gem instal rake

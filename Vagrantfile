@@ -128,13 +128,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "rails" do |cfg|
     cfg.vm.host_name = "rails-server.vm"
     # Forward port 5432 on the gust to 5432 on the host
-    cfg.vm.network :forwarded_port, guest:3000, host:5353
+    cfg.vm.network :forwarded_port, guest:3000, host:5566
     #The DB server will be at IP address 192.168.50.50
-    cfg.vm.network :private_network, ip: "192.168.53.53"
+    cfg.vm.network :private_network, ip: "192.168.55.66"
 
     cfg.vm.provision :ansible do |ansible|
         ansible.playbook = "provision/rails-playbook.yml"
-        ansible.verbose = 'v'
+        ansible.verbose = 'vv'
     end
   end
 end

@@ -1,21 +1,4 @@
 ---
-- name: Update APT cache
-  apt: update_cache=yes
-  sudo: true
 
-- name: install curl
-  apt:
-    pkg: curl
-    state: present
-
-- name: echo path
-  shell: echo $PATH
-  sudo: true
-
-- name: install rvm
-  shell: curl -sSL https://get.rvm.io | bash -s stable --ruby
-  sudo: true
-
-- name: echo path
-  shell: echo $PATH
-  sudo: true
+- include: rbenv.yml
+- include: rbenv-ruby-install.yml

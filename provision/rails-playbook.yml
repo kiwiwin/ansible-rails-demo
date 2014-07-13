@@ -3,6 +3,7 @@
 - hosts: rails
   sudo: yes
   roles:
+    - kiwi_ruby  
     - git
-    - ruby
+    # - ruby
     - server
