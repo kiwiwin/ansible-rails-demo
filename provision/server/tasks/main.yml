@@ -1,0 +1,18 @@
+---
+
+- name: checkout source code
+  git: repo=git://github.com/kiwiwin/ansible-rails-demo.git
+       dest=/rails-demo
+
+- name: install gems
+  shell: bundle install
+  chdir: /rails-demo
+
+
+- name: migrate db
+  shell: rake db:migrate
+  chdir: /rails-demo
+
+- name: start server
+  shell: rails s
+  chdir: /rails-demo

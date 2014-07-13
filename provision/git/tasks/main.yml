@@ -1,0 +1,9 @@
+---
+- name: Update APT cache
+  apt: update_cache=yes
+  sudo: true
+
+- name: git | Install Git
+  apt:
+    pkg: git
+    state: present

@@ -1,0 +1,8 @@
+---
+
+- hosts: rails
+  sudo: yes
+  roles:
+    - git
+    - ruby
+    - server
