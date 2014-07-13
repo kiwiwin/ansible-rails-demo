@@ -30,6 +30,6 @@
     chdir: /rails-demo
 
 - name: start server
-  shell: nohup rails s &
+  shell: rails s -d
   args:
     chdir: /rails-demo
